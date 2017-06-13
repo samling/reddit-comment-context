@@ -12,12 +12,12 @@
     "content_scripts": [
         {
             "matches": ["*://*.reddit.com/r/*/comments/*"],
-            "js": ["jquery-3.2.1.min.js", "content.js"],
+            "js": ["js/jquery-3.2.1.min.js", "js/content.js"],
             "run_at": "document_end"
         }
     ],
     "background": {
-        "scripts":["background.js"]
+        "scripts":["js/background.js"]
     },
     "web_accessible_resources": ["img/Reddit-icon.png"],
     "icons": {
