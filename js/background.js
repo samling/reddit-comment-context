@@ -8,7 +8,6 @@ function copyCommentWithoutContext(info, tab) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, "getHash", function(response) {
             if (response.value != null) {
-                // Copy URL to clipboard
                 base_url = tabs[0].url.match(/https:\/\/www.reddit.com\/r\/[\w]*\/comments\/[\w]*\/[\w]*\//g);
                 comment_url = base_url + response.value + "/";
                 copyToClipboard(comment_url);
@@ -24,7 +23,6 @@ function copyCommentWithContext(info, tab) {
         chrome.tabs.sendMessage(tabs[0].id, "getHash", function(response) {
             console.log(response.value);
             if (response.value != null) {
-                // Copy URL to clipboard
                 base_url = tabs[0].url.match(/https:\/\/www.reddit.com\/r\/[\w]*\/comments\/[\w]*\/[\w]*\//g);
                 context = "?context=10000";
                 comment_url = base_url + response.value + "/" + context;
