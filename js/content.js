@@ -23,4 +23,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if(request == "getHash") {
         sendResponse({value: commentHash});
     }
+    commentHash = null;
 });
