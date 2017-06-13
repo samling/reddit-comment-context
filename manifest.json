@@ -1,0 +1,26 @@
+{
+    "name": "Reddit Comment Context",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Copy reddit comments with a contextual menu",
+    "permissions": [
+        "contextMenus",
+        "activeTab",
+        "notifications",
+        "*://*.reddit.com/r/*/comments/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://*.reddit.com/r/*/comments/*"],
+            "js": ["jquery-3.2.1.min.js", "content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts":["background.js"]
+    },
+    "web_accessible_resources": ["img/Reddit-icon.png"],
+    "icons": {
+        "128": "img/Reddit-icon.png"
+    }
+}
