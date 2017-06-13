@@ -46,7 +46,7 @@ function copyToClipboard(url) {
     document.execCommand('Copy');
     document.body.removeChild(input);
 
-    chrome.notifications.create({type: "basic", title: "Reddit Comment Copy", message: "Comment URL successfully copied to clipboard:\n" + url, iconUrl: "img/Reddit-icon.png"});
+    chrome.notifications.create({type: "basic", title: "Reddit Comment Copy", message: "Successfully copied comment URL to clipboard:\n" + url, iconUrl: "img/Reddit-icon.png"});
 };
 
 chrome.contextMenus.create({
