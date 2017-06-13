@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     // If it receives the message, send back the currently selected element
     // From here we can traverse the DOM and find the closest input, which
     // contains the comment hash
-    if(request == "getClickedEl") {
+    if(request == "getHash") {
         sendResponse({value: commentHash});
     }
 });
